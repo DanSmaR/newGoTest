@@ -5,7 +5,11 @@ class Password
       raise 'Invalid Password'
     end
     puts 'Valid Password'
-    @power =
+    @power = self.get_power
+  end
+
+  def get_power
+    @power = 1.25 * @conteudo.length + 62.5
   end
 
   private
@@ -57,8 +61,9 @@ class Password
 
     return false
   end
-
 end
 
 
-password = Password.new('danil*QWwewe')
+password = Password.new('danil*QW12')
+
+puts password.get_power
